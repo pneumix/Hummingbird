@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ "develop" ]
 
+defaults:
+  run:
+    working-directory: Hummingbird
+    
 jobs:
   build:
 
@@ -13,7 +17,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - working-directory: Hummingbird
     - name: Build
       run: swift build -v
     - name: Run tests
