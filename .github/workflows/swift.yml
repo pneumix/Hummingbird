@@ -16,7 +16,9 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+    - name: 'Switch to Xcode 14 Beta'
+      run: sudo xcode-select -switch /Applications/Xcode_14.0.app
     - name: Build
       run: swift build -v
     - name: Run tests
